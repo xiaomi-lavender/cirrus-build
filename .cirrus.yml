@@ -10,6 +10,8 @@ task:
       image: aarunalr/aosp-build
       cpu: 8
       memory: 32G
+      - sudo apt-get install gpg
+      - rm -rf ~/.repoconfig
     download_ccache_background_script: # To download ccache in background
       - bash download_ccache # Ccache download script
     sync_script:
