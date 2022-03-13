@@ -3,7 +3,7 @@ cd /tmp/rom
 
 # Normal build steps
 . build/envsetup.sh
-lunch xdroid_lavender-userdebug
+lunch aosp_lavender-userdebug
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
