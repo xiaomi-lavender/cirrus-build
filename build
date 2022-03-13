@@ -42,7 +42,7 @@ tg(){
 id=-1001659048493
 
 # compile plox
-make nad -j10 &
+m aex -j10 &
 sleep 85m
 kill %1
 
