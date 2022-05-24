@@ -7,17 +7,17 @@ task:
     name: aosp
     timeout_in: 260m
     container:
-      image: aarunalr/aosp-build
-      cpu: 2
-      memory: 4G
+      image: atomxorg/ubuntu:latest
+      cpu: 8
+      memory: 32G
       commands:
       - sudo apt-get install gpg
       - rm -rf ~/.repoconfig
     download_ccache_background_script: # To download ccache in background
-      - bash download_ccache # Ccache download script
+      - /noclone3 bash download_ccache # Ccache download script
     sync_script:
-      - bash sync
+      - /noclone3 bash sync
     build_script:
-      - bash build
+      - /noclone3 bash build
     upload_ccache_script: # Upload ccache to cloud foreground
-      - bash upload_ccache # Ccache uploading script
+      - /noclone3 bash upload_ccache # Ccache uploading script
