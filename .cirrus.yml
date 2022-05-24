@@ -7,9 +7,9 @@ task:
     name: aosp
     timeout_in: 260m
     container:
-      image: apon77/aosp:latest
+      image: mrkhan007/aosp:latest
       cpu: 8
-      memory: 32G
+      memory: 30G
       commands:
       - sudo apt-get install gpg
       - rm -rf ~/.repoconfig
