@@ -7,7 +7,7 @@ task:
     name: aosp
     timeout_in: 260m
     container:
-      image: mrkhan007/aosp:latest
+      image: aarunalr/aosp-build
       cpu: 8
       memory: 30G
       commands:
