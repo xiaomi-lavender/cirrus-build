@@ -47,7 +47,7 @@ id=-1001659048493
 make systemimage -j8
 #blissify -v lavender &
 sleep 85m
-#kill %1
+kill %1
 
 # Compress function with pigz for faster compression
 com ()
