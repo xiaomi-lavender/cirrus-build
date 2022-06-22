@@ -46,7 +46,7 @@ id=-1001659048493
 # compile plox
 make systemimage -j8
 #blissify -v lavender &
-#sleep 85m
+sleep 85m
 #kill %1
 
 # Compress function with pigz for faster compression
@@ -69,4 +69,4 @@ time com out/target/product/lavender/boot.img 4
 send_zip=$(up out/target/product/lavender/boot.img.tar.gz) && tg $id "Build Succeed!
 $send_zip"
 fi
-#ccache -s # Let's print ccache statistics finally
+ccache -s # Let's print ccache statistics finally
