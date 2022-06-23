@@ -48,7 +48,7 @@ id=-1001659048493
 # compile plox
 if [ $1 == system ]; then
 make systemimage -j32 &
-sleep 85m
+sleep 90m
 kill %1
 elif [ $1 == vendor ]; then
 make vendorimage -j32
