@@ -16,22 +16,25 @@ com ()
     tar --use-compress-program="pigz -k -$2 " -cf $1.tar.gz $1
 }
 
-#echo "|| Compressing CCACHE ||"
+if [ -d /tmp/ccache ]; then
+echo "|| Compressing CCACHE ||"
 
-# First compress in with pogz in a single zip.
-#time com ccache 1 # Compression level 1, its enough
+# First compress in with pigz in a single zip.
+time com ccache 1 # Compression level 1, its enough
 
 # Now split in 0.4GB parts
-#7za a -tzip -v400m -mx=0 ccache_backup.zip ccache.tar.gz
+7za a -tzip -v400m -mx=0 ccache_backup.zip ccache.tar.gz
 
 # upload all parts
-#echo "|| Uploading CCACHE ||"
-#for i in /tmp/ccache_backup.zip.*; do
-#   time up ${i}
-#done
+echo "|| Uploading CCACHE ||"
+for i in /tmp/ccache_backup.zip.*; do
+   time up ${i}
+done
 
-#sleep 5
-#echo "|| Uploaded ||"
+sleep 5
+echo "|| Uploaded ||"
+fi
 
-# clean storage
+echo "|| Clean storage ||"
 rm -rf /tmp/rom
+echo "|| Done ||"
