@@ -27,8 +27,8 @@ fi
 
 # upload function for uploading rom zip file! I don't want unwanted builds in my google drive haha!
 up(){
-	curl --retry 18 --upload-file $1 https://free.keep.sh
-        # 24h, 500mb limit
+	curl --retry 18 --upload-file $1 temp.sh
+        # 3d, 4000mb limit
 }
 
 # It's recommended to use google drive(rclone) as upload solution for coping with the time limit. Un-comment next 3 lines to upload with rclone in drive. Also change apon and junk according to your config name, uploading folder of drive
