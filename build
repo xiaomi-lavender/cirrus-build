@@ -48,12 +48,12 @@ id=-1001659048493
 
 # compile plox
 if [ $1 == system ]; then
-make systemimage -j32 &
-sleep 80m
-kill %1
+make systemimage -j$(nproc --all) #&
+#sleep 80m
+#kill %1
 elif [ $1 == vendor ]; then
-make vendorimage -j32
-make bootimage -j32
+make vendorimage -j$(nproc --all)
+make bootimage -j$(nproc --all)
 fi
 
 # Compress function with pigz for faster compression
