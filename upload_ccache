@@ -16,6 +16,8 @@ com ()
     tar --use-compress-program="pigz -k -$2 " -cf $1.tar.gz $1
 }
 
+# disable ccache upload if rom compilation was successful
+if [ ! -e out/target/product/*/*-2022*.zip ]; then
 if [ -d /tmp/ccache ]; then
 echo "|| Compressing CCACHE ||"
 
@@ -33,6 +35,7 @@ done
 
 sleep 5
 echo "|| Uploaded ||"
+fi
 fi
 
 echo "|| Clean storage ||"
