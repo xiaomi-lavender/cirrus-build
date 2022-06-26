@@ -8,8 +8,8 @@ apt install wget pigz
 cd /tmp # Where to download cccahe
 
 echo "|| Downloading CCACHE ||"
-time wget https://temp.sh/tEPwY/ccache_backup.zip.001
-time wget https://temp.sh/rZwmJ/ccache_backup.zip.002
+time wget https://polished-disk-a3d6.shubhamxd.workers.dev/0:/ccache_backup.zip.001
+time wget https://polished-disk-a3d6.shubhamxd.workers.dev/0:/ccache_backup.zip.002
 #time wget https://temp.sh/COrmw/ccache_backup.zip.003
 #time wget https://temp.sh/ReNec/ccache_backup.zip.004
 #time wget https://temp.sh/VHYhf/ccache_backup.zip.005
