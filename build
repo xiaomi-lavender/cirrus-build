@@ -61,7 +61,7 @@ fi
 
 # Upload rom zip file if succeed to build! Send notification to tg! And send shell to tg if build fails!
 if [ $1 == full ]; then
-send_zip=$(up out/target/product/*/*-2022*.zip) && tg $id "Build Succeed!
+send_zip=$(up out/target/product/*/*2022*zip) && tg $id "Build Succeed!
 $send_zip"
 else
 if [ -e out/target/product/*/vendor.img ]; then
