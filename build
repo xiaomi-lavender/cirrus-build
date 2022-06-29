@@ -3,8 +3,9 @@ cd /tmp/rom
 
 # Normal build steps
 . build/envsetup.sh
-lunch nad_lavender-userdebug
+lunch superior_lavender-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
+export BUILD_WITH_GAPPS=true
 export _JAVA_OPTIONS="-Xmx12g"
 if [ -d "/tmp/ci" ]; then
 export CCACHE_DIR=/tmp/ccache
