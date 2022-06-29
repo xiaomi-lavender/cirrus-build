@@ -16,7 +16,7 @@ up () {
   fi
 }
 elif [ $2 == gh ]; then
-repo_link=https://github.com/ImPrashantt/cirrus-build  # repo link to upload rom zip
+repo_link=https://github.com/Prashant-1695/cirrus-build  # repo link to upload rom zip
 echo $gh_token > mytoken.txt # login in github
 gh auth login --with-token < mytoken.txt
 gh release create ${rom}_ccache --generate-notes --repo $repo_link # create a release tag
