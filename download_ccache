@@ -10,7 +10,21 @@ apt update && apt install wget pigz gh
 
 cd /tmp # Where to download cccahe
 
+tg () {
+	curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" --data "text=$1&chat_id=${chat_id}"
+}
+tg "Build started! 
+https://cirrus-ci.com/build/$CIRRUS_BUILD_ID"
+
+repo_link=https://github.com/Prashant-1695/cirrus-build  # repo link to upload rom zip
+echo $gh_token > mytoken.txt # login in github
+gh auth login --with-token < mytoken.txt
+
 echo "|| Downloading CCACHE ||"
+SECONDS=0
+gh release download ${rom}_ccache -p "*zip.0*" --repo https://github.com/Prashant-1695/cirrus-build
+tg "Successfully Downloaded CCACHE! Time Took: $(($SECONDS / 60))min and $(($SECONDS % 60))sec "
+
 #time wget https://polished-disk-a3d6.shubhamxd.workers.dev/0:/ccache_backup.zip.001
 #time wget https://polished-disk-a3d6.shubhamxd.workers.dev/0:/ccache_backup.zip.002
 #time wget https://polished-disk-a3d6.shubhamxd.workers.dev/0:/ccache_backup.zip.003

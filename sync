@@ -6,9 +6,6 @@ cd /tmp/rom
 tg () {
 	curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" --data "text=$1&chat_id=${chat_id}"
 }
-
-tg "Build started! 
-https://cirrus-ci.com/build/$CIRRUS_BUILD_ID"
 SECONDS=0
 
 ##some of my work
