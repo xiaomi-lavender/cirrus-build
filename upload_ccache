@@ -50,7 +50,7 @@ time com ccache 1 # Compression level 1, its enough
 
 # upload all parts
 echo "|| Uploading CCACHE ||"
-for i in /tmp/${rom}_ccache_backup.zip.*; do
+for i in ${rom}_ccache_backup.zip.*; do
 	send_zip=$(up $i) && tg "CCACHE Uploaded!
 	$send_zip"
 done
