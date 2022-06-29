@@ -52,7 +52,7 @@ case "$1" in
 		tg "Building system.img to collect some ccache!"
 		SECONDS=0
 		make systemimage -j$(nproc --all) &
-		sleep 85m
+		sleep 95m
 		tg "Stopping system.img & preparing for ccache upload!"
 		kill %1
 	;;
