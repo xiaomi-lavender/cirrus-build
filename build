@@ -3,7 +3,7 @@ cd /tmp/rom
 
 # Normal build steps
 . build/envsetup.sh
-lunch lineage_lavender-userdebug
+lunch p404_lavender-userdebug
 export _JAVA_OPTIONS="-Xmx12g"
 if [ -d "/tmp/ci" ]; then
 export CCACHE_DIR=/tmp/ccache
