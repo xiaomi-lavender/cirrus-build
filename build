@@ -46,7 +46,7 @@ case "$1" in
 	full)
 		tg "Building ROM...!"
 		SECONDS=0
-		make bacon
+		make bacon -j30
 	;;
 	system)
 		tg "Building system.img to collect some ccache!"
