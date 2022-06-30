@@ -3,6 +3,7 @@ cd /tmp/rom
 
 # Normal build steps
 . build/envsetup.sh
+export WITH_GAPPS=true
 lunch p404_lavender-userdebug
 export _JAVA_OPTIONS="-Xmx10g"
 if [ -d "/tmp/ci" ]; then
@@ -46,7 +47,7 @@ case "$1" in
 	full)
 		tg "Building ROM...!"
 		SECONDS=0
-		make bacon -j30
+		make bacon -j8
 	;;
 	system)
 		tg "Building system.img to collect some ccache!"
