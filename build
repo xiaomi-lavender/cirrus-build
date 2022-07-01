@@ -47,7 +47,10 @@ case "$1" in
 	full)
 		tg "Building ROM...!"
 		SECONDS=0
-		make bacon -j8
+		make bacon -j$(nproc --all)
+        if [ ! -e out/target/product/*/*2022*.zip ]; then # you don't have to run this you're not facing oom kill issue while build is about 98-98%
+	        make bacon -j$(nproc --all) # re-run the build cuz there's still time left considering only few targets left
+        fi		
 	;;
 	system)
 		tg "Building system.img to collect some ccache!"
@@ -69,7 +72,7 @@ case "$1" in
         if [ -e *.zip ]; then
 		send_zip=$(up *.zip) && tg "Build Succeed! Took: $(($SECONDS / 60))min and $(($SECONDS % 60))sec.
 		$send_zip"
-		else
+ 		elif [ -e out/target/product/*/*2022*.zip ]; then
         send_zip=$(up out/target/product/*/*2022*.zip) && tg "Build Succeed! Took: $(($SECONDS / 60))min and $(($SECONDS % 60))sec.
 		$send_zip"
 		fi
