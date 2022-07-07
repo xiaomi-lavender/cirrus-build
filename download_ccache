@@ -6,7 +6,7 @@ free -h
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
 chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-apt update && apt install wget pigz gh
+apt update && apt install -y wget pigz gh aria2
 
 cd /tmp # Where to download cccahe
 
@@ -24,9 +24,18 @@ echo "|| Downloading CCACHE ||"
 SECONDS=0
 #gh release download ${rom}_ccache -p "*zip.0*" --repo https://github.com/Prashant-1695/cirrus-build
 
-time wget https://polished-disk-a3d6.shubhamxd.workers.dev/0:/posp_ccache_backup.zip.001
-time wget https://polished-disk-a3d6.shubhamxd.workers.dev/0:/posp_ccache_backup.zip.002
-#time wget https://polished-disk-a3d6.shubhamxd.workers.dev/0:/p404_ccache_backup.zip.003
+down () {
+time aria2c $1 -x16 -s50
+}
+
+cd /tmp # Where to download cccahe
+
+down https://polished-disk-a3d6.shubhamxd.workers.dev/0:/posp_ccache_backup.zip.001
+down https://polished-disk-a3d6.shubhamxd.workers.dev/0:/posp_ccache_backup.zip.002
+#time wget https://polished-disk-a3d6.shubhamxd.workers.dev/0:/aospa_ccache_backup.zip.003
+
+#down https://emy.ehteshammalik4.workers.dev/$rom/ccache.tar.gz
+
 tg "Successfully Downloaded CCACHE! Time Took: $(($SECONDS / 60))min and $(($SECONDS % 60))sec "
 
 
