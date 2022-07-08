@@ -32,7 +32,7 @@ cd /tmp # Where to download cccahe
 
 down https://polished-disk-a3d6.shubhamxd.workers.dev/0:/arrow_ccache_backup.zip.001
 down https://polished-disk-a3d6.shubhamxd.workers.dev/0:/arrow_ccache_backup.zip.002
-#time wget https://polished-disk-a3d6.shubhamxd.workers.dev/0:/aospa_ccache_backup.zip.003
+down https://polished-disk-a3d6.shubhamxd.workers.dev/0:/arrow_ccache_backup.zip.003
 
 #down https://emy.ehteshammalik4.workers.dev/$rom/ccache.tar.gz
 
