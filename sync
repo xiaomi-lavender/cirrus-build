@@ -13,7 +13,7 @@ git config --global user.name "Prashant-1695"
 git config --global user.email "prashant33968@gmail.com"
 
 # Repo init command, that -device,-mips,-darwin,-notdefault part will save you more time and storage to sync, add more according to your rom and choice. Optimization is welcomed! Let's make it quit, and with depth=1 so that no unnecessary things.
-repo init --depth=1 --no-repo-verify -u https://github.com/PotatoProject/manifest.git -b frico_mr1-release -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-12.1 -g default,-mips,-darwin,-notdefault
 
 # Local manifest
 #git clone https://github.com/Prashant-1695/local_manifest.git --depth 1 -b shinka .repo/local_manifests
@@ -24,5 +24,5 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # Clone local manifest! So that no need to manually git clone repos or change hals, you can use normal git clone or rm and re clone, they will cost little more time, and you may get timeout! Let's make it quit and depth=1 too.
 git clone --depth=1 -b 12.1 https://github.com/Prashant-1695/android_device_xiaomi_lavender device/xiaomi/lavender
 git clone --depth=1 -b 12.1 https://github.com/Prashant-1695/android_vendor_xiaomi_lavender vendor/xiaomi/lavender
-git clone --depht=1 -b qti https://github.com/projects-nexus/nexus_kernel_xiaomi_lavender kernel/xiaomi/lavender
+git clone --depth=1 -b qti https://github.com/projects-nexus/nexus_kernel_xiaomi_lavender kernel/xiaomi/lavender
 tg "Cloned all Sources Successfully! Time Took: $(($SECONDS / 60))min and $(($SECONDS % 60))sec "
