@@ -3,8 +3,10 @@ cd /tmp/rom
 
 # Normal build steps
 . build/envsetup.sh
-export ARROW_GAPPS=true
-lunch arrow_lavender-userdebug
+export BUILD_WITH_GAPPS=true
+export SELINUX_IGNORE_NEVERALLOWS=true
+export TZ=Asia/Kolkata
+lunch superior_lavender-userdebug
 export _JAVA_OPTIONS="-Xmx10g"
 if [ -d "/tmp/ci" ]; then
 export CCACHE_DIR=/tmp/ccache
@@ -47,9 +49,9 @@ case "$1" in
 	full)
 		tg "Building ROM...!"
 		SECONDS=0
-		make bacon -j$(nproc --all)
+		m bacon -j$(nproc --all)
         if [ ! -e out/target/product/*/*2022*.zip ]; then # you don't have to run this you're not facing oom kill issue while build is about 98-98%
-	        make bacon -j$(nproc --all) # re-run the build cuz there's still time left considering only few targets left
+	        m bacon -j$(nproc --all) # re-run the build cuz there's still time left considering only few targets left
         fi		
 	;;
 	system)
