@@ -3,10 +3,8 @@ cd /tmp/rom
 
 # Normal build steps
 . build/envsetup.sh
-export ARROW_GAPPS=true
-export ARROW_BUILD_TYPE=HANA
 export TZ=Asia/Kolkata
-lunch arrow_lavender-userdebug
+lunch komodo_lavender-userdebug
 export _JAVA_OPTIONS="-Xmx10g"
 if [ -d "/tmp/ci" ]; then
 export CCACHE_DIR=/tmp/ccache
@@ -49,9 +47,9 @@ case "$1" in
 	full)
 		tg "Building ROM...!"
 		SECONDS=0
-		make bacon -j$(nproc --all)
+		mka komodo -j$(nproc --all)
         if [ ! -e out/target/product/*/*2022*.zip ]; then # you don't have to run this you're not facing oom kill issue while build is about 98-98%
-	        make bacon -j$(nproc --all) # re-run the build cuz there's still time left considering only few targets left
+	        mka komodo -j$(nproc --all) # re-run the build cuz there's still time left considering only few targets left
         fi		
 	;;
 	system)
